@@ -22,6 +22,9 @@ app.listen( process.env.PORT  || 3000, function(){
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, "/public/signup.html"));
 })
+app.get("/sitemap", function(req, res){
+    res.sendFile(path.join(__dirname, "/public/sitemap.xml"));
+})
 
 app.post("/", function(req , res){
     const firstName = req.body.firstname;
