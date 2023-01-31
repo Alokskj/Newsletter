@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '/public')));
 // app.use(express.static("public/css"));
 // app.use(express.static("public/images"));
 
@@ -17,14 +17,14 @@ app.listen( process.env.PORT  || 3000, function(){
 
 
 app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "/public/signup.html"));
 })
 
 app.post("/", function(req , res){
     const firstName = req.body.firstname;
     const lastName = req.body.lastname;
     const email = req.body.email;
-    res.sendFile(path.join(__dirname, "../public/success.html"));
+    res.sendFile(path.join(__dirname, "/public/success.html"));
     console.log(firstName, lastName, email);
 
     const data = {
