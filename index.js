@@ -3,7 +3,10 @@ const request = require("request");
 const path = require("path");
 const https = require("https");
 const app = express();
+const {inject} = require("@vercel/analytics")
 const bodyParser = require("body-parser");
+
+inject();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '/public')));
